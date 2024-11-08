@@ -4,27 +4,28 @@ import Link from "next/link";
 export default function Layout({ children }) {
   return (
     <div>
-      <Tabs defaultValue="dashboard" className="w-full">
-        <TabsList className="w-full">
+      <Tabs defaultValue="dashboard" className="flex">
+        <TabsList className="flex flex-col h-screen w-48 py-10  justify-start gap-5">
+        <h1 className="text-3xl text-black">Menue Bar</h1>
           <Link href={"/admin/dashboard"}>
             {" "}
-            <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
+            <TabsTrigger value="dashboard" className=" text-xl">Dashboard</TabsTrigger>
           </Link>
           <Link href={"/admin/courses"}>
             {" "}
-            <TabsTrigger value="courses">Courses</TabsTrigger>
+            <TabsTrigger value="courses"  className=" text-xl">Courses</TabsTrigger>
           </Link>
           <Link href={"/admin/batches"}>
             {" "}
-            <TabsTrigger value="batches">Batches</TabsTrigger>
+            <TabsTrigger value="batches"  className=" text-xl">Batches</TabsTrigger>
           </Link>
           <Link href={"/admin/trainers"}>
             {" "}
-            <TabsTrigger value="trainer">Trainers</TabsTrigger>
+            <TabsTrigger value="trainer"  className=" text-xl">Trainers</TabsTrigger>
           </Link>
           <Link href={"/admin/students"}>
             {" "}
-            <TabsTrigger value="students">Students</TabsTrigger>
+            <TabsTrigger value="students" className=" text-xl">Students</TabsTrigger>
           </Link>
         </TabsList>
         <TabsContent value="dashboard">{children}</TabsContent>

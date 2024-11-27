@@ -3,30 +3,35 @@ import Link from "next/link";
 
 export default function Layout({ children }) {
   return (
-    <div>
-      <Tabs defaultValue="dashboard" className="flex">
-        <TabsList className="flex flex-col h-screen w-48 py-10  justify-start gap-5">
-        <h1 className="text-3xl text-black">Menue Bar</h1>
-          <Link href={"/admin/dashboard"}>
-            {" "}
-            <TabsTrigger value="dashboard" className=" text-xl">Dashboard</TabsTrigger>
-          </Link>
-          <Link href={"/admin/courses"}>
-            {" "}
-            <TabsTrigger value="courses"  className=" text-xl">Courses</TabsTrigger>
-          </Link>
-          <Link href={"/admin/batches"}>
-            {" "}
-            <TabsTrigger value="batches"  className=" text-xl">Batches</TabsTrigger>
-          </Link>
-          <Link href={"/admin/trainers"}>
-            {" "}
-            <TabsTrigger value="trainer"  className=" text-xl">Trainers</TabsTrigger>
-          </Link>
-          <Link href={"/admin/students"}>
-            {" "}
-            <TabsTrigger value="students" className=" text-xl">Students</TabsTrigger>
-          </Link>
+    <div className="">
+      <Tabs defaultValue="dashboard" className="flex bg-gray-100">
+        <TabsList className="flex flex-col h-screen w-60 bottom-0 py-10 bg-gradient-to-b from-indigo-700 to-purple-600 text-white   justify-start gap-10">
+        <h1 className="text-4xl text-white min-w-full text-center  font-bold rounded-md" >Developer</h1>
+        <Link href={"/admin/dashboard"}>
+                <div className="flex items-center gap-4 text-lg font-medium hover:bg-purple-700 p-3 rounded-md transition-all cursor-pointer">
+                  📊 Dashboard
+                </div>
+              </Link>
+              <Link href={"/admin/courses"}>
+                <div className="flex items-center gap-4 text-lg font-medium hover:bg-purple-700 p-3 rounded-md transition-all cursor-pointer">
+                  📚 Courses
+                </div>
+              </Link>
+              <Link href={"/admin/batches"}>
+                <div className="flex items-center gap-4 text-lg font-medium hover:bg-purple-700 p-3 rounded-md transition-all cursor-pointer">
+                  🗂️ Batches
+                </div>
+              </Link>
+              <Link href={"/admin/trainers"}>
+                <div className="flex items-center gap-4 text-lg text-white font-medium hover:bg-purple-700 p-3 rounded-md transition-all cursor-pointer">
+                  👩‍🏫 Trainers
+                </div>
+              </Link>
+              <Link href={"/admin/students"}>
+                <div className="flex items-center gap-4 text-lg font-medium hover:bg-purple-700 p-3 rounded-md transition-all cursor-pointer">
+                  👨‍🎓 Students
+                </div>
+              </Link>
         </TabsList>
         <TabsContent value="dashboard">{children}</TabsContent>
         <TabsContent value="courses">{children}</TabsContent>
